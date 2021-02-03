@@ -42,16 +42,6 @@
 				친구 목록 to do
 			</div>
 		</div>
-		<!-- profile 수정 모달창 -->
-		<div class="black_bg"></div>
-		<div class="modal_wrap">
-		    <div class="modal_close" onclick="modalClose()">
-		    	<a href="#">close</a>
-		    </div>
-		    <div>
-
-		    </div>
-		</div>
 	</c:if>
 	<div id="userCont">
 		<div id="loginCont">
@@ -65,6 +55,18 @@
 	</div>
 </div>
 
+
+
+<!-- profile 수정 and id pw 찾기 모달창 -->
+<div class="black_bg"></div>
+<div class="modal_wrap">
+	<div class="modal_close" onclick="modalClose()">
+			<a href="#">close</a>
+	</div>
+	<div id="modalCont">
+	
+	</div>
+</div>
 
 
 

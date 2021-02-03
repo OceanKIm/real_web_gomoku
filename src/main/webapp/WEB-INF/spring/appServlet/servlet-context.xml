@@ -58,6 +58,14 @@
 			value="org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory"/>
 	</beans:bean>
 	
+	<!-- Mail Utils -->
+	<beans:bean class="com.ocean.realomuk.common.MailUtils">
+		<beans:property name="userId" value="gotmd37"/>
+		<beans:property name="userPw" value="gotmd!1!1!1"/>
+		<beans:property name="host" value="smtp.naver.com"/>
+		<beans:property name="port" value="587"/>
+		<beans:property name="fromEmail" value="gotmd37@naver.com"/>
+	</beans:bean>		
 	
 	
 </beans:beans>

@@ -9,5 +9,7 @@ import com.ocean.realomuk.model.UserDomain;
 public interface UserMapper {
 	
 	UserDomain selUser(UserDTO dto);
+	UserDomain selFindId(UserDTO dto);
 	int insUser(UserDTO dto);
+
 }

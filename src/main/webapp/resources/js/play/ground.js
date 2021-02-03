@@ -20,7 +20,7 @@ frame.append(table);
 // 클릭 리스너 // black : 0, white : 1
 var toggle = 0;
 function click(item) {
-	// 기본 두기
+	// 기본 두기 
 	if (toggle) {
 		item.target.style.backgroundImage = "url('/res/img/black_dol.png')";
 	} else {
@@ -30,8 +30,23 @@ function click(item) {
 }
 
 
+// -- lastCont
+var btn_watingRoom = document.querySelector('#btn_watingRoom')
+var btn_chattingRoom = document.querySelector('#btn_chattingRoom')
 
+var watingRoom = document.querySelector('#watingRoom')
+var chattingRoom = document.querySelector('#chattingRoom')
 
+btn_watingRoom.onclick = function () {
+	console.log('select waiting room')
+	watingRoom.style.display = 'block'
+	chattingRoom.style.display = 'none'
+}
+btn_chattingRoom.onclick = function () {
+	console.log('select chatting room')	
+	watingRoom.style.display = 'none'
+	chattingRoom.style.display = 'block'
+}
 
 
 

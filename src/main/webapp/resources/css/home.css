@@ -159,7 +159,7 @@
   /* margin-left: -50px; */
 }
 
-/**************** 모달창 [start] ************/
+/**************** 모달창 [start] *******************/
 
 .modal_wrap {
     display: none;
@@ -197,7 +197,47 @@
     background:url(https://img.icons8.com/metro/26/000000/close-window.png);
     text-indent: -9999px;
 }
-
+#modalCont input[type="text"] {
+    margin : 5px;
+	width: 80%; /* 원하는 너비 설정 */ 
+	height: auto; /* 높이값 초기화 */ 
+	line-height : normal; /* line-height 초기화 */ 
+	padding: .5em .3em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */ 
+	font-family: inherit; /* 폰트 상속 */ 
+	border: 1px solid #999; 
+	border-radius: 0; /* iSO 둥근모서리 제거 */ 
+	outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */ 
+	-webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */ 
+	-moz-appearance: none; 
+	appearance: none; 	
+	position: relative;
+    left: 9%;
+}
+#modalCont #modal_msg {
+    color: gray;
+    position: relative;
+    left: 10%;
+    margin-top: 30px;
+    font-size: 20px;
+}
+#modalCont button {
+    font: inherit;
+    background: none;
+    color: inherit;
+    border: solid 1px rgba(0,0,0,0.4);
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin-top: 2px;
+    margin-right: 20px;
+    outline: none;	
+    width: 80%;	
+    position: relative;
+    left: 10%;
+}
+#modalCont #modal_exp {
+	font-size: 11px;
+    margin: 20px;
+}
 /**************** 모달창 [end] ************/
 
 

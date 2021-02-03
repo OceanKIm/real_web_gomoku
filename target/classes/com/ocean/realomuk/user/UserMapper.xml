@@ -4,10 +4,15 @@
 	
 	<select id="selUser" resultType="UserDomain">
 		SELECT * FROM t_user
-		WHERE user_id = #{user_id};
+		WHERE user_id = #{user_id}
 	</select>
 	
-	
+	<select id="selFindId" resultType="UserDomain">
+		SELECT user_id 
+		FROM t_user
+		WHERE e_mail = #{e_mail}
+	</select>
+		
 	<insert id="insUser">
 		INSERT INTO t_user
 		(user_id, user_pw, salt, nm, gender, e_mail)

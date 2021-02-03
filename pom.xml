@@ -205,7 +205,13 @@
 			<artifactId>tiles-jsp</artifactId>
 			<version>${tiles-version}</version>
 		</dependency>
-		  
+		
+		<!-- 자바 메일 -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.5.0-b01</version>
+		</dependency>		  
 		  
 	</dependencies>
     <build>

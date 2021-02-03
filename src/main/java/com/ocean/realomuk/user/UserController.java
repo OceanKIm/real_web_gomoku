@@ -51,6 +51,17 @@ public class UserController {
 		return map;
 	}
 	
+	// ---------------- 아이디 비밀번호 찾기
+	@ResponseBody
+	@PostMapping("/findId")
+	public HashMap<String, Integer>findIdProc(@RequestBody UserDTO dto){
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		map.put(Const.KEY_RESULT, service.findId(dto));
+		return map;
+	}
+	
+	
+	
 }
 
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ocean.realomuk.common.Const;
+import com.ocean.realomuk.common.MailUtils;
 import com.ocean.realomuk.common.SecurityUtils;
 import com.ocean.realomuk.model.UserDTO;
 import com.ocean.realomuk.model.UserDomain;
@@ -15,6 +16,9 @@ public class UserService {
 
 	@Autowired
 	private UserMapper mapper;
+	
+	@Autowired
+	private MailUtils mailUtils;
 	
 	public int selUser(HttpSession hs, UserDTO dto) {
 		UserDomain vo = mapper.selUser(dto);
@@ -39,4 +43,37 @@ public class UserService {
 		return mapper.insUser(dto);
 	}
 	
+	// ---------------- 아이디 비밀번호 찾기
+	public int findId(UserDTO dto) {
+		System.out.println("email : " + dto.getE_mail());
+		UserDomain vo = mapper.selFindId(dto);
+		if (vo == null) {
+			return 0;	// 해당 메일로 가입된 아이디 없음.
+		}
+		return mailUtils.sendFindIdEmail(dto.getE_mail(), vo.getUser_id());
+	}
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
