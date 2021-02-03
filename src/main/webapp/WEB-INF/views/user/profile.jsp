@@ -17,12 +17,6 @@
 			<div>성별 : ${data.gender == 0 ? '남성' : '여성'}</div>
 			<div>연락처 : ${data.ph}</div>
 		</div>
-		<div>
-			<form action="/user/profileUpload.korea" method="post" enctype="multipart/form-data">
-				<input type="file" name="profileImg">
-				<input type="submit" value="업로드">
-			</form>
-		</div>
 	</div>
 	
 </div>
