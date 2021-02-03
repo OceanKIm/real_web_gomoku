@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ocean.realomuk.user.UserMapper">
+	
+	<select id="selUser" resultType="UserDomain">
+		SELECT * FROM t_user
+		WHERE user_id = #{user_id};
+	</select>
+	
+	
+	<insert id="insUser">
+		INSERT INTO t_user
+		(user_id, user_pw, salt, nm, gender, e_mail)
+		VALUES
+		(#{user_id}, #{user_pw}, #{salt}, #{nm}, #{gender}, #{e_mail})
+	</insert>
+</mapper>

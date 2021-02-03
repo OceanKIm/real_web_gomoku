@@ -1,0 +1,184 @@
+body {
+    background: #fff;
+    color: #000;
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1000px;
+	height: 600px;
+}
+/* 공통 적용 사항 */
+button:hover {
+	cursor: pointer;
+}
+
+/* 오목 테이블 */
+table {
+    border-collapse: collapse;
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+td{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 0px solid red;
+    padding: 3px;
+}
+td:hover {
+	background: #FAEBD7;
+	cursor: pointer;	
+}
+#omuktable {
+	position: absolute;
+    visibility: visible;
+} 
+
+/* 부모 컨테이너 */
+#groundContainer {
+	background: #FAEBD7;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+} 
+
+/* board 컨테이너 */
+#boardCont {
+    position: relative;
+    top: -533px;
+    left: 622px;
+    height: 40px;
+}
+/* first line */
+#boardCont #firstLine {
+}
+#boardCont #firstLine div{
+	float: left;
+}
+#boardCont #firstLine button{
+    position: absolute;
+    left: 23%;
+	font: inherit;
+    background: none;
+    color: inherit;
+    border: solid 1px rgba(0,0,0,0.4);
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin : 5px;
+    outline: none;    
+}
+#roomTitle {
+	margin-top : 10px;
+}
+
+/* ready room*/
+#readyRoom {
+	border-top: solid 1px rgba(0,0,0,0.4);
+    width: 260px;
+    position: relative;
+    top: 130%;
+    padding: 20px;
+}
+#blackRoom {
+    position: absolute;
+    left: 0%;
+}
+#whiteRoom {
+	position: absolute;
+  	left: 57%;
+}
+.tabRoom {
+	width: 130px;
+    background: #AFA5A4;
+    margin : 0px;
+    text-align: center;
+}
+.selectbox {
+	width: 130px;
+	font: inherit;
+    background: none;
+    color: inherit;
+    border: solid 1px rgba(0,0,0,0.4);
+    border-radius: none;
+    padding: 4px 12px;
+    margin : 0px;
+    outline: none;   
+}
+.time {
+	width: 130px;
+    background: #AFA5A4;
+    text-align: center;
+}
+
+/* 비김신청 및 무르기 버튼*/
+#drawAndCut {
+	position: relative;
+	top: 290%;
+}
+#drawAndCut div {
+	float: left;
+	margin-right: 15px;
+}
+
+#drawAndCut button {
+	font: inherit;
+    background: none;
+    color: inherit;
+    border: solid 1px rgba(0,0,0,0.4);
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin : 5px;
+    outline: none;   
+}
+
+/* 라스트 컨테이너 */
+#lastCont {
+	border-top: solid 1px rgba(0,0,0,0.4);
+    width: 260px;
+    position: relative;
+    top: 420%;
+    padding: 20px;
+}
+#btn_last button {
+	margin: 0;
+	padding: 0.5rem 1rem;
+	
+	font-family: "Noto Sans KR", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	width: 80px;
+	
+	border: none;
+	border-radius: none;
+}
+#watingRoom {
+	border: solid 1px rgba(0,0,0,0.4);
+    position: absolute;
+    background: white;
+    top: 80%;
+    width: 280px;
+    height: 280PX;
+}
+
+#chattingRoom{
+    position: absolute;
+    background: white;
+    top: 80%;
+    width: 280px;
+    height: 280PX;
+	display: none;
+}
+
+
+
+
+
+
+
+

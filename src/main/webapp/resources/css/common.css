@@ -1,0 +1,72 @@
+/* 모든 jsp 공통 적용 사항  */
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1000px;
+}
+
+/* header */
+section {
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #8B4513;
+    border-radius: 4px;
+}
+
+header ul:after{
+    content:'';
+    display: block;
+    clear:both;
+}
+
+header ul li {
+    float: left;
+}
+
+header ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;    
+}
+
+header ul li a:hover:not(.active) {
+    background-color: #CD853F;
+}
+
+/* logo */
+#mainLogoContainer div {
+	float: right;
+}
+
+
+  
+  
+  
+  
+  
+  

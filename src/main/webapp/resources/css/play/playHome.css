@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+#playHomeContainer {
+    background: #FAEBD7;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 서브 메뉴 버튼*/
+#playHomeContainer #subMenuCont button{
+  margin: 10px;
+  background:#8B4513;
+  color:#fff;
+  border-radius: 4px;
+  position:relative;
+  height:40px;
+  font-size: 20px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+#playHomeContainer #subMenuCont button:hover{
+  background:#fff;
+  color:#8B4513;
+}
+#playHomeContainer #subMenuCont button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #8B4513;
+  transition:400ms ease all;
+}
+#playHomeContainer #subMenuCont button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+#playHomeContainer #subMenuCont button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+

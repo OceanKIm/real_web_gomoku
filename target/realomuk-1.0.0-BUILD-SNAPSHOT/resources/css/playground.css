@@ -1,0 +1,23 @@
+html, body { height: 100%; }
+body, h3 { margin: 10px; padding: 30px;}
+
+table {
+    border-collapse: collapse;
+}
+
+td{
+    position: relative;
+    top: -718px;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid red;
+    padding: 3px;
+}
+
+
+
+#omuktable {
+    visibility: visible;
+} 
