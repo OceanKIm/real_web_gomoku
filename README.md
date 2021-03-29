@@ -1,6 +1,8 @@
 
 // 개인 웹개발 포트폴리오 <리얼오목> 입니다.   
 // 웹에서 실시간으로 상대와 오목대전을 펼 칠 수 있습니다.   
+// 시연영상   
+https://www.youtube.com/watch?v=j5NlgWMP2vY
 
 ★사용기술
 -	Java
