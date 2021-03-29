@@ -6,17 +6,39 @@
 		SELECT * FROM t_user
 		WHERE user_id = #{user_id}
 	</select>
-	
 	<select id="selFindId" resultType="UserDomain">
 		SELECT user_id 
 		FROM t_user
 		WHERE e_mail = #{e_mail}
 	</select>
-		
 	<insert id="insUser">
 		INSERT INTO t_user
 		(user_id, user_pw, salt, nm, gender, e_mail)
 		VALUES
 		(#{user_id}, #{user_pw}, #{salt}, #{nm}, #{gender}, #{e_mail})
 	</insert>
+	
+	<!-- room code proc -->
+	<select id="selRoomCode" resultType="UserDomain">
+		SELECT i_user, room_code 
+		FROM t_user
+		WHERE user_id = #{user_id};
+	</select>
+	<update id="insRoomCode">
+		UPDATE t_user
+		SET room_code = #{room_code}
+		WHERE i_user = #{i_user}
+	</update>
+	<update id="delRoomCode">
+		UPDATE t_user
+		SET room_code = null
+		WHERE i_user = #{i_user}
+	</update>
+	
+	
+	
+	
+	
+	
+	
 </mapper>

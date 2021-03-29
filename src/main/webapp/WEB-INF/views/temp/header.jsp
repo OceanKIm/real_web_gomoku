@@ -11,7 +11,11 @@
 		</div>
 		<c:if test="${loginUser != null}">
 			<div>id : ${loginUser.user_id} |</div>
-			<div><a href="">로그아웃</a></div>
+			<div><a href="/user/headerLogout">로그아웃</a></div>
+		</c:if>
+		<c:if test="${guest != null}">
+			<div>id : ${guest.id} |</div>
+			<div><a href="/user/headerLogout">로그아웃</a></div>
 		</c:if>
 	</div>
 	<ul>

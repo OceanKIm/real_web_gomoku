@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 import com.ocean.realomuk.common.Const;
 import com.ocean.realomuk.common.MailUtils;
 import com.ocean.realomuk.common.SecurityUtils;
+import com.ocean.realomuk.model.RoomDTO;
 import com.ocean.realomuk.model.UserDTO;
 import com.ocean.realomuk.model.UserDomain;
+import com.ocean.realomuk.model.UserEntity;
 
 @Service
 public class UserService {
@@ -53,6 +55,16 @@ public class UserService {
 		return mailUtils.sendFindIdEmail(dto.getE_mail(), vo.getUser_id());
 	}
 	
+	// ---------------- room_code Proc
+	public UserDomain selRoomCode(UserEntity dto) {
+		return mapper.selRoomCode(dto);
+	}
+	public int insRoomCode(RoomDTO dto) {
+		return mapper.insRoomCode(dto);
+	}
+	public int delRoomCode(UserEntity dto) {
+		return mapper.delRoomCode(dto);
+	}
 	
 	
 }

@@ -6,8 +6,13 @@
 	<c:if test="${loginUser == null}">
 		<h3>웹으로 즐기는 리얼 타임 오목 대전</h3>
 		<div class="wrap">
-	  		<div id="btn_login" class="button">로그인</div>
+		<c:if test="${guest == null}">
+			<div id="btn_login" class="button">로그인</div>
 	  		<div id="btn_guest" class="button2">게스트</div>
+		</c:if>
+		<c:if test="${guest != null}">
+			<div>현재 게스트 모드 플레이 중 입니다. (나중에 추가 기능 구현)</div>
+		</c:if>
 		</div>	
 	</c:if>
 	<c:if test="${loginUser != null}">

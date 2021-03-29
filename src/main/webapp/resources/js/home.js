@@ -79,7 +79,12 @@ console.log('btn_join clicked')
 
 // 게스트 플레이 - 미구현
 btn_guest.onclick = function () {
-	console.log('guest')
+	axios.get('/user/guest')
+	.then(function (res) {
+		if (res.data.result === 1) {
+			location.href = '/play/playHome'
+		}
+	})
 }
 
 
@@ -106,7 +111,7 @@ function findIdPw() {
 	        </div>
 	        <div id="modal_exp">
 			            ※가입된 아이디가 있을 경우, 입력하신 이메일로 아이디를 안내해 드립니다.<br>
-			            ※만약 이메일이 오지 않는다면, 스팸 편지함응로 이동하지 않았는지 확인해 주세요<br>
+			            ※만약 이메일이 오지 않는다면, 스팸 편지함으로 이동하지 않았는지 확인해 주세요<br>
 			            ※이메일 서비스 제공자 사정에 의해 즉시 도착하지 않을 수 있으니,
 			            최대 30분 정도 기다리신 후 다시 시도해주세요.
 	        </div>
@@ -160,7 +165,7 @@ function login_ajax (user_id, user_pw) {
 		console.log(res);
 		if (res.data.result === 1) {
 			// 그냥 채널로 이동 시키자.
-			location.href = '/main/home';
+			location.href = '/play/playHome'
 		} else if (res.data.result === 2) {
 			alert('비밀번호를 다시 확인 해 주세요.');
 		} else if (res.data.result === 3) {

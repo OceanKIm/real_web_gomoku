@@ -18,7 +18,11 @@ public class UserEntity {
 	private int lose_cnt;
 	private int draw_cnt;
 	private int ranking;
+	private String room_code;
+	private int is_login;
+	private int is_play;
 	
+
 	public int getI_user() {
 		return i_user;
 	}
@@ -103,4 +107,22 @@ public class UserEntity {
 	public void setRanking(int ranking) {
 		this.ranking = ranking;
 	}
+	public String getRoom_code() {
+		return room_code;
+	}
+	public void setRoom_code(String room_code) {
+		this.room_code = room_code;
+	}	
+	public int getIs_login() {
+		return is_login;
+	}
+	public void setIs_login(int is_login) {
+		this.is_login = is_login;
+	}	
+	public int getIs_play() {
+		return is_play;
+	}
+	public void setIs_play(int is_play) {
+		this.is_play = is_play;
+	}	
 }

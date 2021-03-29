@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ocean.realomuk.play.PlayMapper">
+
+	<insert id="createRoom" useGeneratedKeys="true" keyProperty="i_room">
+		INSERT INTO t_room
+		(room_code, room_host)
+		VALUES
+		(#{room_code}, #{room_host})
+	</insert>
+	
+	<select id="selRoomList" resultType="RoomDomain">
+		SELECT i_room, a.room_code, date_format(a.r_dt, '%H:%i') as r_dt, room_host 
+		FROM t_room a
+		INNER JOIN t_user b
+		ON a.room_code = b.room_code
+		GROUP BY a.room_code
+		ORDER BY i_room DESC		
+	</select>
+	
+	<!-- 대기자 리스트 -->
+	<select id="selWaitList" resultType="UserDomain">
+		SELECT user_id, nm, rating 
+		FROM t_user
+		WHERE room_code = #{room_code} AND is_play = 0
+	</select>
+
+	<!-- 흑백 선택  ajax polling 처리 -->
+	<select id="selSeletedPlayer" resultType="RoomDomain">
+		SELECT black_player, white_player 
+		FROM t_room
+		WHERE room_code = #{room_code};
+	</select>
+	<update id="setBlackPlayer">
+		UPDATE t_room
+		SET black_player = #{user_id}
+		WHERE room_code = #{room_code}
+	</update>
+	<update id="setWhitePlayer">
+		UPDATE t_room
+		SET white_player = #{user_id}
+		WHERE room_code = #{room_code}
+	</update>
+	<update id="setBlackNull">
+		UPDATE t_room
+		SET black_player = null
+		WHERE room_code = #{room_code};	
+	</update>
+	<update id="setWhiteNull">
+		UPDATE t_room
+		SET white_player = null
+		WHERE room_code = #{room_code};	
+	</update>		
+
+	<!-- is_play 처리  -->
+	<update id="setPlay">
+		UPDATE t_user
+		SET is_play = 1
+		WHERE user_id = #{user_id}
+	</update>
+	<update id="relPlay">
+		UPDATE t_user
+		SET is_play = 0
+		WHERE user_id = #{user_id}
+	</update>
+	<select id="isPlay" resultType="UserDomain">
+		SELECT is_play
+		FROM t_user
+		WHERE user_id = #{user_id};
+	</select>
+
+	<!-- pos proc -->
+	<insert id="startPos">
+		INSERT INTO t_pos (x, y, z, room_code, p_time)
+		VALUES (-1, -1, 3 , #{room_code}, TIMESTAMPDIFF(SECOND, CURDATE(), NOW()));	
+	</insert>
+	<insert id="putPos">
+		INSERT INTO t_pos (x, y, z, room_code, p_time)
+		VALUES (#{x}, #{y}, #{z}, #{room_code}, TIMESTAMPDIFF(SECOND, CURDATE(), NOW()))	
+	</insert>
+	<select id="selPos" resultType="Pos">
+		SELECT i_room, x, y, z, p_time, TIMESTAMPDIFF(SECOND, CURDATE(), NOW()) AS n_time 
+		FROM t_pos
+		WHERE room_code = #{room_code}	
+	</select>
+	<select id="isPos" resultType="Pos">
+		SELECT * FROM t_pos
+		WHERE x = #{x} AND y = #{y}
+		AND room_code = #{room_code}
+	</select>
+	<delete id="delPos">
+		DELETE FROM t_pos
+		WHERE room_code = #{room_code}
+	</delete>
+	<delete id="delLastPos">
+		DELETE FROM t_pos
+		WHERE i_room = (
+		SELECT MAX(i_room) FROM t_pos
+		WHERE room_code = #{room_code})	
+	</delete>
+	
+	<!-- finish game proc -->
+	<update id="winProc">
+		UPDATE t_user
+		SET win_cnt = win_cnt + 1 , rating = rating + 5 
+		WHERE user_id = #{user_id}	
+	</update>
+	<update id="loseProc">
+		UPDATE t_user
+		SET lose_cnt = lose_cnt + 1 , rating = rating - 5 
+		WHERE user_id = #{user_id}	
+	</update>
+	
+	<!-- 기권체크 -->
+	<update id="setAbs">
+		UPDATE t_room
+		SET is_abs = 1
+		WHERE room_code = #{room_code}	
+	</update>
+	<update id="relAbs">
+		UPDATE t_room
+		SET is_abs = 0
+		WHERE room_code = #{room_code}		
+	</update>	
+	<select id="chkAbs" resultType="RoomDTO">
+		SELECT is_abs FROM t_room
+		WHERE room_code = #{room_code}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

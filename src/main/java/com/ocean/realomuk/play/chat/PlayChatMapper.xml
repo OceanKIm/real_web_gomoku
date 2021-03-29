@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ocean.realomuk.play.chat.PlayChatMapper">
+	<insert id="insText">
+		INSERT INTO t_play_chat (user_id, ctnt, room_code)
+		VALUES (#{user_id}, #{ctnt}, #{room_code})	
+	</insert>
+	
+	<select id="selText" resultType="PlayChatDomain">
+		SELECT a.user_id, b.rating, a.ctnt
+		FROM t_play_chat a
+		INNER JOIN t_user b
+		ON a.user_id = b.user_id
+		ORDER BY i_chat DESC
+		LIMIT 0, 30	
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
